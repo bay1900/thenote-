@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<form> 
+
+          <ion-item>
+              <ion-label position="floating">Floating Label</ion-label>
+              <ion-input [(ngModel)]="inputTask" name="title"></ion-input>
+          </ion-item>
+
+          <ion-button type="submit" (click)="storeData()">Default</ion-button>
+
+  </form>
+
+
+  <ion-list> 
+    <ion-item *ngFor="let taskTitle of taskTitles" > 
+        <ion-label>
+           {{ taskTitle }}
+        </ion-label> 
+    </ion-item>
+ </ion-list>
+
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        About
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+
+
+  <ion-item>
+    <ion-label position="floating">Add input here </ion-label>
+    <ion-input  [(ngModel)]="aboutInput" name="title"></ion-input>
+  </ion-item>
+  <ion-button type="submit" (click)=storeData(aboutInput)> add</ion-button>
+
+   <ion-list> 
+     <ion-item *ngFor =" let a of about; let i of index" (click)="changeStatus(a.date)" > 
+       
+       <ion-label> 
+         {{ a.title  }} 
+       </ion-label>
+       <ion-button *ngIf="a.status" color="danger" slot="end" (click)="deleteAbout(a.date)"> delete </ion-button>
+     </ion-item>
+   </ion-list>
+
+</ion-content>
